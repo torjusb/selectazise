@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Selectasize</title>
+<script src="src/selectasize.js"></script>
+<script>
+    document.addEventListener( 'DOMContentLoaded', function () {
+        var img = new Image();
+        img.src = './thread.jpg'; 
+
+        img.addEventListener( 'load', function () {
+            var sel = new Selectazise( img );
+            document.body.innerHTML = sel.generateHtml();
+            css = sel.generateCss();
+            cssElem = document.createElement('style');
+            cssElem.innerHTML = css;
+            document.body.appendChild(cssElem);
+        }, false );
+    }, false);
+</script>
